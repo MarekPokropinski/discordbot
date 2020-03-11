@@ -42,8 +42,8 @@ meme_config = {
 
 
 @client.command()
-async def meme(*args):
-    await client.say("I'm on it boss...")
+async def meme(ctx,*args):
+    await ctx.send("I'm on it boss...")
 
     meme = args[0]
     config = meme_config[meme]
@@ -69,10 +69,8 @@ async def meme(*args):
 
     draw = ImageDraw.Draw(im1)
 
-    im1.save(PATH)
-
-    with open(PATH, 'rb') as f:
-        await client.upload(f)
+    im1.save(PATH)    
+    await ctx.send("Your meme:", file=discord.File(PATH))
 
 
 
