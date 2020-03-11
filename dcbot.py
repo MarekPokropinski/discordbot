@@ -9,8 +9,6 @@ import os
 
 CLIENT_ID = os.environ['CLIENT_ID']
 PATH = "out.png"
-
-
 BOT_PREFIX = ("%")
 
 TOKEN = os.environ['TOKEN']
@@ -76,11 +74,6 @@ async def meme(*args):
     with open(PATH, 'rb') as f:
         await client.upload(f)
 
-
-@client.event
-async def on_ready():
-    await client.change_presence(game=Game(name="your commands - %cmd", type=2))
-    print("Logged in as " + client.user.name)
 
 
 client.run(TOKEN)
