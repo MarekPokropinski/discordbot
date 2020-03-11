@@ -1,9 +1,4 @@
-import json
-import urllib.request
-from random import *
 import discord
-import praw
-import xkcd as xk
 from discord import *
 from discord.ext.commands import Bot
 from PIL import ImageFont
